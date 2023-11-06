@@ -11,7 +11,16 @@ export const comment = ({ id }) => {
 }
 
 export const Comment = {
-  post: (_obj, { root }) => {
-    return db.comment.findUnique({ where: { id: root?.id } }).post()
-  },
+  post: (_obj, { root }) =>
+    db.comment.findUnique({ where: { id: root.id } }).post(),
+}
+export const createComment = ({ input }) => {
+  return db.comment.create({
+    data: input,
+  })
+}
+export const deleteComment = ({ id }) => {
+  return db.comment.delete({
+    where: { id },
+  })
 }
