@@ -1,4 +1,5 @@
 import { db } from 'src/lib/db'
+
 import { validate } from '@redwoodjs/api'
 
 export const contacts = () => {
